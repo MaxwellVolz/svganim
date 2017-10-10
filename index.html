@@ -31,11 +31,16 @@
                 <rect x="0" y="0" width="800" height="800" fill="white"/>
             </svg>
 
+            <object class="paint" id="glasses" type="image/svg+xml" data="dist/svg/glasses.svg"></object>
+
+            <svg class="revealer" id="screen3" width="800px" height="800px" viewBox="0 0 800 800" >
+                <rect x="0" y="0" width="800" height="800" fill="white"/>
+            </svg>
+
             <!-- <object class="revealer" id="screen1" type="image/svg+xml" data="dist/svg/white_800x800.svg"></object> -->
 
             <object id="my-svg" type="image/svg+xml" data="dist/svg/max.svg"></object>
-            <svg id="my-div-id">
-            </svg>
+ 
         </div>
         <script>
         $(document).ready(function() {
@@ -71,35 +76,42 @@
         .revealer, .paint {
             position: absolute;
             left: .5em;
+            width:800px;
+            height:800px;
             /*background-image: linear-gradient(black 0%, transparent 100%); */
 
         }
 
-        #face {
-            z-index: -5;
+        .paint{
             -webkit-mask-image: linear-gradient(black 0%, transparent 100%); 
-            /*-webkit-mask-image: -webkit-gradient(linear, left top, right bottom, 
-                    color-stop(0.00,  rgba(0,0,0,1)),
-                    color-stop(0.45,  rgba(0,0,0,1)),
-                    color-stop(0.50,  rgba(0,0,0,0)),
-                    color-stop(0.55,  rgba(0,0,0,0)),
-                    color-stop(1.00,  rgba(0,0,0,0)));*/
-            /*transform: translateY(150px);*/
-            /*animation: popup 12s ease infinite;*/
         }
 
-        #screen1{
-            z-index: -4;
-            animation: wipeUp 4s ease-in 8s infinite;
+        #face {
+            z-index: -5;
         }
-        
+
+
         #face-dots{
             z-index:-7;
         }
 
+        #glasses{
+            z-index:-9;
+        }
+
+        #screen1{
+            z-index: -4;
+            animation: wipeUp 4s ease-in 6s infinite;
+        }
+        
         #screen2{
             z-index:-6;
-            animation: wipeUp 4s ease-in 9s infinite;
+            animation: wipeUp 4s ease-in 7s infinite;
+        }
+
+        #screen3{
+            z-index:-8;
+            animation: wipeUp 4s ease-in 8s infinite;
         }
 
         @keyframes wipeUp {
