@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="A collection of SVG animations.">
+  <meta name="author" content="Max Volz">
+  <!-- <link rel="icon" href="../../favicon.ico"> -->
+
+  <title>SVG Anim</title>
+
+  <!-- Custom styles for this template -->
+  <script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+  <script src="dist/js/vivus.js"></script>
+
+</head>
+<body>
+<object id="paint-face" type="image/svg+xml" data="dist/svg/paint_face.svg" style="position:absolute;left:.5em;z-index:-5"></object>
+<object id="my-svg" type="image/svg+xml" data="dist/svg/max.svg"></object>
+
+<script>
+  new Vivus('my-svg', {
+    type: 'sync', // delayed, sync, oneByOne, script, scenario or scenario-sync. [Default: delayed]
+    duration: 1500,
+    reverseStack: true,
+    animTimingFunction: Vivus.EASE
+  }, myCallback);
+
+  //  new Vivus('glases-top', {
+  //   reverseStack: true
+  // }, myCallback);
+  
+
+  function myCallback(){
+    console.log("suh");
+  }
+</script>
+
+<style>
+@keyframes popup {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  50% {
+    opacity: 0;
+    
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  95% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+#paint-face {
+  /*transform: translateY(150px);*/
+  animation: popup 20s ease infinite;
+}
+
+</style>
+
+  </body>
+  </html>
