@@ -18,13 +18,14 @@
 
 </head>
 <body>
-<object id="paint-face" type="image/svg+xml" data="dist/svg/paint_face.svg" style="position:absolute;left:.5em;z-index:-5"></object>
-<object id="my-svg" type="image/svg+xml" data="dist/svg/max.svg"></object>
-
+  <div id="container">
+    <object class="paint" id="face-dots" type="image/svg+xml" data="dist/svg/face.svg"></object>
+    <object id="my-svg" type="image/svg+xml" data="dist/svg/max.svg"></object>
+  </div>
 <script>
   new Vivus('my-svg', {
     type: 'sync', // delayed, sync, oneByOne, script, scenario or scenario-sync. [Default: delayed]
-    duration: 1500,
+    duration: 500,
     reverseStack: true,
     animTimingFunction: Vivus.EASE
   }, myCallback);
@@ -40,6 +41,17 @@
 </script>
 
 <style>
+
+  .paint{
+    position:absolute;
+    left:.5em;
+    z-index: -5;
+  }
+  .container{
+    height:auto;
+    width:auto;
+  }
+
 @keyframes popup {
   0% {
     opacity: 0;
@@ -63,9 +75,9 @@
   }
 }
 
-#paint-face {
+#face-dots {
   /*transform: translateY(150px);*/
-  animation: popup 20s ease infinite;
+  animation: popup 10s ease infinite;
 }
 
 </style>
